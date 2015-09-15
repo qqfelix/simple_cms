@@ -1,0 +1,16 @@
+<div class="form-wrapper">
+    <%= link_to "<< Back to List", {:action => 'index'}, class: "btn btn-primary" %>
+    <h2>Delete Page</h2>
+
+    <%= form_tag({:action => 'destroy', :id => @page.id}) do  %>
+        <div class="alert alert-danger">
+            Are you sure to delete this page?
+        </div>
+
+        <p>
+            <%= @page.name %>
+        </p>
+
+        <%= submit_tag "Delete Page", :class => 'btn btn-danger' %>
+    <% end %>
+</div>

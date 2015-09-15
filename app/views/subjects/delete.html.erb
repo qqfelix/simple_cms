@@ -1,0 +1,16 @@
+<div class="form-wrapper">
+    <%= link_to "<< Back to List", {:action => 'index'}, class: "btn btn-primary" %>
+    <h2>Delete Subject</h2>
+
+    <%= form_tag({:action => 'destroy', :id => @subject.id}) do  %>
+        <div class="alert alert-danger">
+            Are you sure to delete this subject?
+        </div>
+
+        <p>
+            <%= @subject.name %>
+        </p>
+
+        <%= submit_tag "Delete Subject", :class => 'btn btn-danger' %>
+    <% end %>
+</div>

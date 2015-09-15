@@ -1,0 +1,60 @@
+<div class="index">
+    <h2>Pages</h2>
+    <%= link_to "Add New Pages", {:action => 'new'}, class: "btn btn-primary" %>
+
+    <table class="table">
+        <thead>
+            <th>
+                #
+            </th>
+            <th>
+                Subject ID
+            </th>
+            <th>
+                Page
+            </th>
+            <th>
+                Permalink
+            </th>
+            <th>
+                Visible
+            </th>
+            <th>
+                Sections
+            </th>
+            <th>
+                Actions
+            </th>
+        </thead>
+        <tbody>
+            <% @pages.each do |page| %>
+                <tr>
+                    <td>
+                        <%= page.position %>
+                    </td>
+                    <td>
+                        <%= page.subject_id %>
+                    </td>
+                    <td>
+                        <%= page.name %>
+                    </td>
+                    <td>
+                        <%= page.permalink %>
+                    </td>
+                    <td>
+                        <%= page.visible ? 'Yes' : 'No' %>
+                    </td>
+                    <td>
+                        <%= page.sections.size %>
+                    </td>
+                    <td>
+                        <%= link_to "Show", {:action => 'show', :id => page.id }, class: "btn btn-primary" %>
+                        <%= link_to "Edit", {:action => 'edit', :id => page.id }, class: "btn btn-primary" %>
+                        <%= link_to "Delete", {:action => 'delete', :id => page.id }, class: "btn btn-primary" %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

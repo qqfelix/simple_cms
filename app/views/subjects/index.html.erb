@@ -1,0 +1,48 @@
+<div class="index">
+    <h2>Subjects</h2>
+    <%= link_to "Add New Subjects", {:action => 'new'}, class: "btn btn-primary" %>
+
+    <table class="table">
+        <thead>
+            <th>
+                #
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                Visible
+            </th>
+            <th>
+                Pages
+            </th>
+            <th>
+                Actions
+            </th>
+        </thead>
+        <tbody>
+            <% @subjects.each do |subject| %>
+                <tr>
+                    <td>
+                        <%= subject.position %>
+                    </td>
+                    <td>
+                        <%= subject.name %>
+                    </td>
+                    <td>
+                        <%= subject.visible ? 'Yes' : 'No' %>
+                    </td>
+                    <td>
+                        <%= subject.pages.size %>
+                    </td>
+                    <td>
+                        <%= link_to "Show", {:action => 'show', :id => subject.id }, class: "btn btn-primary" %>
+                        <%= link_to "Edit", {:action => 'edit', :id => subject.id }, class: "btn btn-primary" %>
+                        <%= link_to "Delete", {:action => 'delete', :id => subject.id }, class: "btn btn-primary" %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

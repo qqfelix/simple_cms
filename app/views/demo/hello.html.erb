@@ -1,0 +1,33 @@
+<h1>Demo#hello</h1>
+<p>Find me in app/views/demo/hello.html.erb</p>
+
+<%= 1+1 %>
+<br>
+
+<%
+
+target = "world"
+template = "hello %s"
+ %>
+
+<%= "hello #{target}" %>
+
+<br>
+
+<%= template % "world" %>
+
+<% 3.times do %>
+    <%= "xxx" %> <br>
+<% end %>
+
+<% @array.each do |n| %>
+  <%= n %> <br>
+<% end %>
+
+ID: <%= params[:id] %> <br>
+ID: <%= @id %> <br>
+PAGE: <%= @page.to_i + 1 %> <br>
+
+<hr>
+
+<%= params.inspect %>
